@@ -82,7 +82,7 @@ char* multiply(char a[], int c)
 	return res;
 }
 
-char divide(char a[], char b[])
+int divide(char a[], char b[])
 {
 	// 긴 문자열 - 짧은 문자열 + 1만큼 반복하면 모든 케이스만큼 반복 가능
 	// 각각의 케이스를 반복하며 b와 비교 후
