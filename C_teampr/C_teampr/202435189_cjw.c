@@ -55,6 +55,7 @@ void subtract(char a[], char b[])
 			}
 			len_a -= len_b;
 			i--;
+			break;
 		}
 	}
 }
@@ -117,7 +118,6 @@ int str2int(char str[]);
 int main()
 {
 	// TODO: 다항 연산 입력 받고 괄호, 사칙연산 법칙 고려하여 연산
-
 
 	return 0;
 }
