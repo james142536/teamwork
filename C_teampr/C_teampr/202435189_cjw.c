@@ -1,3 +1,5 @@
+#define _CRT_SECURE_NO_WARNINGS
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -28,7 +30,7 @@ char* add(char a[], char b[])
 	return res;
 }
 
-void subtract(char a[], char b[])
+char* subtract(char a[], char b[])
 {
 	// 긴 문자열 - 짧은 문자열 + 1만큼 반복하면 모든 케이스만큼 반복 가능
 	// 각각의 케이스를 반복하며 b와 비교 후
@@ -58,6 +60,9 @@ void subtract(char a[], char b[])
 			break;
 		}
 	}
+
+	char* res = a;
+	return res;
 }
 
 char* multiply(char a[], int c)
@@ -65,7 +70,6 @@ char* multiply(char a[], int c)
 	// (문자열 길이 * 입력받은 정수) 크기의 문자열 변수 선언
 	// 동적 메모리 할당을 위해 malloc 함수 사용
 	// 반복하며 문자열을 해당 변수에 저장
-
 	int len_a = 0;
 	while (a[len_a] != '\0') len_a++;
 
@@ -118,6 +122,7 @@ int str2int(char str[]);
 int main()
 {
 	// TODO: 다항 연산 입력 받고 괄호, 사칙연산 법칙 고려하여 연산
+	printf("문자열을 입력하세요: ");
 
 	return 0;
 }
