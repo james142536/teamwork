@@ -1,5 +1,8 @@
+#define _CRT_SECURE_NO_WARNINGS
+
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 char* add(char a[], char b[])
 {
@@ -65,7 +68,6 @@ char* multiply(char a[], int c)
 	// (문자열 길이 * 입력받은 정수) 크기의 문자열 변수 선언
 	// 동적 메모리 할당을 위해 malloc 함수 사용
 	// 반복하며 문자열을 해당 변수에 저장
-
 	int len_a = 0;
 	while (a[len_a] != '\0') len_a++;
 
@@ -117,7 +119,127 @@ int str2int(char str[]);
 
 int main()
 {
-	// TODO: 다항 연산 입력 받고 괄호, 사칙연산 법칙 고려하여 연산
+	char input[500];
+	printf("문자열을 입력하세요: ");
+
+	// Input: (_Practice! - tice!) * 4
+	fgets(input, 500, stdin);
+	input[strcspn(input, "\n")] = '\0';
+
+	int len = strlen(input);
+
+	while (strchr(input, '+') || strchr(input, '-') || strchr(input, '*') || strchr(input, '/')) {
+		int start = -1, end = -1;
+		for (int i = 0; i < len; i++) {
+			if (input[i] == '(') start = i;
+			else if (input[i] == ')') {
+				end = i;
+				break;
+			}
+		}
+
+		if (start != -1 && end != -1) {
+			char inner_expr[500];
+			strncpy(inner_expr, input + start + 1, end - start - 1);
+			inner_expr[end - start - 1] = '\0';
+
+			char a[500], b[500];
+			int i = 0, j = 0;
+
+			while (inner_expr[i] != ' ' && inner_expr[i] != '\0') {
+				a[j++] = inner_expr[i++];
+			}
+			a[j] = '\0';
+
+			char op = inner_expr[i + 1];
+
+			j = 0;
+			i += 3;
+			while (inner_expr[i] != '\0') {
+				b[j++] = inner_expr[i++];
+			}
+			b[j] = '\0';
+
+			char result[500];
+			if (op == '+') {
+				char* add_res = add(a, b);
+				strcpy(result, add_res);
+				free(add_res);
+			}
+			else if (op == '-') {
+				subtract(a, b);
+				strcpy(result, a);
+			}
+			else if (op == '*') {
+				int mul = str2int(b);
+				char* mul_res = multiply(a, mul);
+				strcpy(result, mul_res);
+				free(mul_res);
+			}
+			else if (op == '/') {
+				int div_res = divide(a, b);
+				sprintf(result, "%d", div_res);
+			}
+
+			char new_expr[500];
+			strncpy(new_expr, input, start);
+			new_expr[start] = '\0';
+			strcat(new_expr, result);
+			strcat(new_expr, input + end + 1);
+
+			strcpy(input, new_expr);
+			len = strlen(input);
+		}
+		else
+		{
+			char inner_expr[500];
+			strncpy(inner_expr, input, strlen(input));
+			inner_expr[strlen(input)] = '\0';
+
+			char a[500], b[500];
+			int i = 0, j = 0;
+
+			while (inner_expr[i] != ' ' && inner_expr[i] != '\0') {
+				a[j++] = inner_expr[i++];
+			}
+			a[j] = '\0';
+
+			char op = inner_expr[i + 1];
+
+			j = 0;
+			i += 3;
+			while (inner_expr[i] != '\0') {
+				b[j++] = inner_expr[i++];
+			}
+			b[j] = '\0';
+
+			char result[500];
+			if (op == '+') {
+				char* add_res = add(a, b);
+				strcpy(result, add_res);
+				free(add_res);
+			}
+			else if (op == '-') {
+				subtract(a, b);
+				strcpy(result, a);
+			}
+			else if (op == '*') {
+				int mul = str2int(b);
+				char* mul_res = multiply(a, mul);
+				strcpy(result, mul_res);
+				free(mul_res);
+			}
+			else if (op == '/') {
+				int div_res = divide(a, b);
+				sprintf(result, "%d", div_res);
+			}
+
+			strcpy(input, result);
+			len = strlen(input);
+		}
+	}
+
+	printf("결과: %s\n", input);
 
 	return 0;
 }
