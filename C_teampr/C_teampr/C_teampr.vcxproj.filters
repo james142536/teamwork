@@ -21,5 +21,8 @@
     <ClCompile Include="202435189_cjw.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="final.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -1,5 +1,10 @@
-﻿  202435189_cjw.c
-C:\Users\채주원\OneDrive\바탕 화면\teamwork\C_teampr\C_teampr\202435189_cjw.c(191,10): warning C4267: '=': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\채주원\OneDrive\바탕 화면\teamwork\C_teampr\C_teampr\202435189_cjw.c(238,10): warning C4267: '=': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\채주원\OneDrive\바탕 화면\teamwork\C_teampr\C_teampr\202435189_cjw.c(129,12): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  C_teampr.vcxproj -> C:\Users\채주원\OneDrive\바탕 화면\teamwork\C_teampr\x64\Debug\C_teampr.exe
+﻿  final.c
+C:\Users\User\Desktop\teamwork\C_teampr\C_teampr\final.c(15,17): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\User\Desktop\teamwork\C_teampr\C_teampr\final.c(15,36): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\User\Desktop\teamwork\C_teampr\C_teampr\final.c(46,17): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\User\Desktop\teamwork\C_teampr\C_teampr\final.c(91,15): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\User\Desktop\teamwork\C_teampr\C_teampr\final.c(112,15): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\User\Desktop\teamwork\C_teampr\C_teampr\final.c(197,19): warning C4267: '=': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\User\Desktop\teamwork\C_teampr\C_teampr\final.c(222,19): warning C4267: '=': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\User\Desktop\teamwork\C_teampr\C_teampr\final.c(147,15): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  C_teampr.vcxproj -> C:\Users\User\Desktop\teamwork\C_teampr\x64\Debug\C_teampr.exe
